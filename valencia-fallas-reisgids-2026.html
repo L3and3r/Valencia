@@ -1,0 +1,1470 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Valencia Fallas 2026 — Reisgids 17–20 Maart</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Sans+3:wght@300;400;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --fire-orange: #E8622B;
+    --fire-red: #C4391D;
+    --fire-yellow: #F5A623;
+    --deep-night: #0F0E17;
+    --warm-dark: #1A1A2E;
+    --warm-cream: #FFF8F0;
+    --warm-sand: #F2E8DC;
+    --text-light: #FAF0E6;
+    --text-muted: #B8A99A;
+    --accent-teal: #2D9EA0;
+    --section-bg: #16162A;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Source Sans 3', sans-serif;
+    background: var(--deep-night);
+    color: var(--text-light);
+    line-height: 1.7;
+    font-weight: 300;
+    overflow-x: hidden;
+  }
+
+  /* ============ HERO ============ */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    background:
+      radial-gradient(ellipse at 20% 80%, rgba(232,98,43,0.3) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 20%, rgba(196,57,29,0.2) 0%, transparent 50%),
+      radial-gradient(ellipse at 50% 50%, rgba(245,166,35,0.1) 0%, transparent 60%),
+      var(--deep-night);
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
+    opacity: 0.4;
+    pointer-events: none;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 2rem;
+  }
+
+  .hero-date {
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: 600;
+    font-size: 0.85rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--fire-yellow);
+    margin-bottom: 1.5rem;
+    opacity: 0;
+    animation: fadeUp 0.8s 0.3s forwards;
+  }
+
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    font-size: clamp(3rem, 10vw, 7.5rem);
+    line-height: 0.95;
+    margin-bottom: 0.5rem;
+    opacity: 0;
+    animation: fadeUp 0.8s 0.5s forwards;
+  }
+
+  .hero h1 .accent {
+    display: block;
+    background: linear-gradient(135deg, var(--fire-yellow), var(--fire-orange), var(--fire-red));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-sub {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.2rem, 3vw, 1.8rem);
+    font-style: italic;
+    color: var(--text-muted);
+    margin-top: 1rem;
+    opacity: 0;
+    animation: fadeUp 0.8s 0.7s forwards;
+  }
+
+  .hero-fire {
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    right: 0;
+    height: 120px;
+    background: linear-gradient(to top, var(--deep-night), transparent);
+    z-index: 1;
+  }
+
+  .scroll-hint {
+    position: absolute;
+    bottom: 3rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    opacity: 0;
+    animation: fadeUp 0.8s 1.2s forwards;
+  }
+
+  .scroll-hint a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    transition: color 0.3s;
+  }
+
+  .scroll-hint a:hover { color: var(--fire-yellow); }
+
+  .scroll-hint .arrow {
+    display: block;
+    width: 1px;
+    height: 40px;
+    background: var(--text-muted);
+    position: relative;
+    animation: pulse 2s infinite;
+  }
+
+  /* ============ NAV ============ */
+  .sticky-nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(15,14,23,0.92);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(232,98,43,0.15);
+    padding: 0;
+  }
+
+  .nav-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    gap: 0;
+  }
+  .nav-inner::-webkit-scrollbar { display: none; }
+
+  .nav-link {
+    flex-shrink: 0;
+    padding: 1rem 1.5rem;
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    transition: all 0.3s;
+    border-bottom: 2px solid transparent;
+    white-space: nowrap;
+  }
+
+  .nav-link:hover, .nav-link.active {
+    color: var(--fire-orange);
+    border-bottom-color: var(--fire-orange);
+  }
+
+  /* ============ SECTIONS ============ */
+  section {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+  }
+
+  .section-wide {
+    max-width: 1100px;
+  }
+
+  .section-label {
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: 700;
+    font-size: 0.75rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--fire-orange);
+    margin-bottom: 1rem;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    line-height: 1.15;
+    margin-bottom: 1.5rem;
+  }
+
+  .section-intro {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    max-width: 680px;
+    margin-bottom: 3rem;
+    line-height: 1.8;
+  }
+
+  /* ============ DIVIDER ============ */
+  .fire-divider {
+    height: 3px;
+    max-width: 900px;
+    margin: 0 auto;
+    background: linear-gradient(90deg, transparent, var(--fire-orange), var(--fire-yellow), var(--fire-orange), transparent);
+    opacity: 0.4;
+  }
+
+  /* ============ DAY CARDS ============ */
+  .day-header {
+    padding: 5rem 2rem 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .day-number {
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    font-size: clamp(6rem, 15vw, 10rem);
+    line-height: 1;
+    background: linear-gradient(180deg, rgba(232,98,43,0.2), transparent);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    position: absolute;
+    top: 1rem;
+    right: 2rem;
+    user-select: none;
+  }
+
+  .day-date {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    color: var(--fire-yellow);
+    letter-spacing: 0.05em;
+  }
+
+  .day-title {
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    font-size: clamp(2.2rem, 6vw, 3.5rem);
+    line-height: 1.1;
+    margin-top: 0.5rem;
+  }
+
+  .day-subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    margin-top: 0.8rem;
+  }
+
+  /* ============ TIMELINE ============ */
+  .timeline {
+    max-width: 900px;
+    margin: 2rem auto 0;
+    padding: 0 2rem 3rem;
+    position: relative;
+  }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: calc(2rem + 54px);
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: linear-gradient(180deg, var(--fire-orange), rgba(232,98,43,0.1));
+  }
+
+  .tl-item {
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    gap: 2rem;
+    padding: 1.5rem 0;
+    position: relative;
+  }
+
+  .tl-time {
+    text-align: right;
+    padding-top: 0.2rem;
+  }
+
+  .tl-time .time {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--fire-yellow);
+  }
+
+  .tl-time .dur {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-top: 0.2rem;
+  }
+
+  .tl-dot {
+    position: absolute;
+    left: calc(2rem + 49px);
+    top: 1.75rem;
+    width: 11px;
+    height: 11px;
+    background: var(--fire-orange);
+    border-radius: 50%;
+    border: 2px solid var(--deep-night);
+    z-index: 1;
+  }
+
+  .tl-content {
+    padding-left: 0.5rem;
+  }
+
+  .tl-content h3 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .tl-content p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+
+  .tl-tag {
+    display: inline-block;
+    padding: 0.15rem 0.6rem;
+    border-radius: 3px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+
+  .tag-event { background: rgba(232,98,43,0.2); color: var(--fire-orange); }
+  .tag-food { background: rgba(45,158,160,0.2); color: var(--accent-teal); }
+  .tag-sight { background: rgba(245,166,35,0.2); color: var(--fire-yellow); }
+  .tag-travel { background: rgba(184,169,154,0.2); color: var(--text-muted); }
+  .tag-tip { background: rgba(255,255,255,0.08); color: #ccc; }
+
+  /* ============ INFO CARDS ============ */
+  .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .info-card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 12px;
+    padding: 1.8rem;
+    transition: all 0.3s;
+  }
+
+  .info-card:hover {
+    background: rgba(255,255,255,0.05);
+    border-color: rgba(232,98,43,0.2);
+    transform: translateY(-2px);
+  }
+
+  .info-card .card-icon {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+
+  .info-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 1.15rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .info-card p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    line-height: 1.7;
+  }
+
+  .info-card .card-meta {
+    margin-top: 1rem;
+    padding-top: 0.8rem;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    font-size: 0.8rem;
+    color: var(--text-muted);
+  }
+
+  .info-card .card-meta strong {
+    color: var(--fire-yellow);
+    font-weight: 600;
+  }
+
+  /* ============ RESTAURANT CARDS ============ */
+  .resto-card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 12px;
+    padding: 1.8rem;
+    transition: all 0.3s;
+  }
+
+  .resto-card:hover {
+    background: rgba(255,255,255,0.05);
+    border-color: rgba(45,158,160,0.3);
+    transform: translateY(-2px);
+  }
+
+  .resto-card .rating {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: rgba(45,158,160,0.15);
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--accent-teal);
+    margin-bottom: 0.8rem;
+  }
+
+  .resto-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .resto-card .cuisine {
+    font-size: 0.8rem;
+    color: var(--fire-yellow);
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 0.6rem;
+  }
+
+  .resto-card p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  /* ============ HIGHLIGHT BOX ============ */
+  .highlight-box {
+    background:
+      linear-gradient(135deg, rgba(232,98,43,0.1), rgba(196,57,29,0.05));
+    border: 1px solid rgba(232,98,43,0.2);
+    border-left: 3px solid var(--fire-orange);
+    border-radius: 0 12px 12px 0;
+    padding: 1.5rem 2rem;
+    margin: 2rem 0;
+  }
+
+  .highlight-box h4 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: var(--fire-yellow);
+    margin-bottom: 0.5rem;
+  }
+
+  .highlight-box p {
+    color: var(--text-muted);
+    font-size: 0.92rem;
+    line-height: 1.7;
+  }
+
+  /* ============ PRACTICAL TIPS ============ */
+  .tip-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+
+  .tip-item {
+    display: flex;
+    gap: 1rem;
+    padding: 1.2rem;
+    background: rgba(255,255,255,0.02);
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.04);
+  }
+
+  .tip-icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+    width: 40px;
+    text-align: center;
+  }
+
+  .tip-text h4 {
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .tip-text p {
+    color: var(--text-muted);
+    font-size: 0.82rem;
+    line-height: 1.6;
+  }
+
+  /* ============ FALLAS EXPLAINER ============ */
+  .explainer-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+
+  .explainer-item {
+    padding: 2rem;
+    background:
+      linear-gradient(145deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+    border-radius: 16px;
+    border: 1px solid rgba(255,255,255,0.05);
+  }
+
+  .explainer-item h3 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin-bottom: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  .explainer-item p {
+    color: var(--text-muted);
+    font-size: 0.92rem;
+    line-height: 1.7;
+  }
+
+  /* ============ MAP SECTION ============ */
+  .route-box {
+    background: rgba(255,255,255,0.03);
+    border-radius: 16px;
+    padding: 2.5rem;
+    border: 1px solid rgba(255,255,255,0.06);
+    margin-top: 2rem;
+  }
+
+  .route-box h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+  }
+
+  .route-stops {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
+
+  .route-stop {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.4rem 0.8rem;
+    background: rgba(232,98,43,0.1);
+    border: 1px solid rgba(232,98,43,0.2);
+    border-radius: 20px;
+    font-size: 0.8rem;
+    color: var(--text-light);
+  }
+
+  .route-stop .stop-num {
+    background: var(--fire-orange);
+    color: white;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.65rem;
+    font-weight: 700;
+  }
+
+  /* ============ FOOTER ============ */
+  footer {
+    text-align: center;
+    padding: 4rem 2rem;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    background: linear-gradient(to top, rgba(232,98,43,0.05), transparent);
+  }
+
+  footer .farewell {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(135deg, var(--fire-yellow), var(--fire-orange));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* ============ ANIMATIONS ============ */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 0.4; }
+    50% { opacity: 1; }
+  }
+
+  /* ============ RESPONSIVE ============ */
+  @media (max-width: 768px) {
+    .explainer-grid { grid-template-columns: 1fr; }
+
+    .timeline::before { left: calc(2rem + 4px); }
+
+    .tl-item {
+      grid-template-columns: 1fr;
+      padding-left: 2rem;
+    }
+
+    .tl-time {
+      text-align: left;
+      padding-left: 0.5rem;
+    }
+
+    .tl-dot {
+      left: calc(2rem - 1px);
+      top: 0.3rem;
+    }
+
+    .day-number {
+      font-size: 5rem;
+      right: 1rem;
+      top: 2rem;
+    }
+
+    .nav-link { padding: 0.8rem 1rem; font-size: 0.75rem; }
+
+    section { padding: 3rem 1.5rem; }
+    .day-header { padding: 4rem 1.5rem 1.5rem; }
+    .timeline { padding: 0 1.5rem 2rem; }
+  }
+
+  @media (max-width: 480px) {
+    .cards-grid { grid-template-columns: 1fr; }
+    .tip-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ==================== HERO ==================== -->
+<div class="hero" id="top">
+  <div class="hero-content">
+    <p class="hero-date">17 – 20 Maart 2026</p>
+    <h1>
+      <span class="accent">Valencia</span>
+      Fallas
+    </h1>
+    <p class="hero-sub">Vuur, kunst en buskruit — jouw complete reisgids</p>
+  </div>
+  <div class="hero-fire"></div>
+  <div class="scroll-hint">
+    <a href="#intro">
+      scroll
+      <span class="arrow"></span>
+    </a>
+  </div>
+</div>
+
+<!-- ==================== NAV ==================== -->
+<nav class="sticky-nav">
+  <div class="nav-inner">
+    <a href="#intro" class="nav-link">Wat zijn Fallas</a>
+    <a href="#praktisch" class="nav-link">Praktisch</a>
+    <a href="#dag1" class="nav-link">Dag 1 — 17 mrt</a>
+    <a href="#dag2" class="nav-link">Dag 2 — 18 mrt</a>
+    <a href="#dag3" class="nav-link">Dag 3 — 19 mrt</a>
+    <a href="#dag4" class="nav-link">Dag 4 — 20 mrt</a>
+    <a href="#eten" class="nav-link">Eten & Drinken</a>
+    <a href="#route" class="nav-link">De Route</a>
+  </div>
+</nav>
+
+<!-- ==================== INTRO ==================== -->
+<section id="intro">
+  <p class="section-label">Achtergrond</p>
+  <h2 class="section-title">Wat zijn de Fallas?</h2>
+  <p class="section-intro">
+    Las Fallas is het meest spectaculaire festival van Spanje. Elke maart verandert Valencia in een openluchtmuseum van gigantische satirische kunstwerken, oorverdovend buskruit en een zee van vuur. Sinds 2016 erkend als UNESCO Immaterieel Cultureel Erfgoed — en 2026 markeert het tienjarig jubileum van die erkenning.
+  </p>
+
+  <div class="explainer-grid">
+    <div class="explainer-item">
+      <h3>🔥 Fallas (Monumenten)</h3>
+      <p>Elke wijk bouwt maandenlang aan een torenhoog kunstwerk van hout, piepschuim en papier-maché — vol satire op de actualiteit. Sommige worden meer dan 20 meter hoog en kosten honderdduizenden euro's. Ze worden allemaal verbrand op de laatste nacht: La Cremà.</p>
+    </div>
+    <div class="explainer-item">
+      <h3>💥 Mascletà</h3>
+      <p>Elke dag om 14:00 op de Plaza del Ayuntamiento: géén vuurwerk om naar te kijken, maar een ritmische explosie van geluid die je in je borstkas voelt. Het duurt zo'n 5 tot 7 minuten en de grond trilt letterlijk. Hét dagelijkse hoogtepunt.</p>
+    </div>
+    <div class="explainer-item">
+      <h3>💐 Ofrenda de Flores</h3>
+      <p>Op 17 en 18 maart lopen duizenden falleros en falleras in traditionele klederdracht naar de Plaza de la Virgen, waar ze bloemen aanbieden aan de beschermheilige van Valencia. Met die bloemen wordt een enorme mantel voor het Mariabeeld gebouwd.</p>
+    </div>
+    <div class="explainer-item">
+      <h3>🎆 Nit del Foc</h3>
+      <p>De "Nacht van het Vuur" op 18 maart — het grootste vuurwerkspektakel van het hele festival. Begint rond middernacht bij de Puente de Monteolivete en is absoluut onvergetelijk. Vuurwerk in de klassieke zin van het woord, maar dan op Valencia-schaal.</p>
+    </div>
+  </div>
+</section>
+
+<div class="fire-divider"></div>
+
+<!-- ==================== PRAKTISCH ==================== -->
+<section id="praktisch">
+  <p class="section-label">Voorbereiding</p>
+  <h2 class="section-title">Praktische tips</h2>
+  <p class="section-intro">
+    Fallas is fantastisch, maar het is ook druk, luid en chaotisch. Met de juiste voorbereiding geniet je twee keer zo veel.
+  </p>
+
+  <div class="tip-grid">
+    <div class="tip-item">
+      <div class="tip-icon">👂</div>
+      <div class="tip-text">
+        <h4>Oordoppen!</h4>
+        <p>De mascletà bereikt 120+ dB. Neem goede oordoppen mee — je kunt het nog steeds voelen en beleven, maar je gehoor blijft intact. 24 uur per dag knallen er ook petardos (rotjes) in de straten.</p>
+      </div>
+    </div>
+    <div class="tip-item">
+      <div class="tip-icon">👟</div>
+      <div class="tip-text">
+        <h4>Comfortabele schoenen</h4>
+        <p>Je loopt makkelijk 15-20 km per dag. Overal zijn straten afgesloten, dus je loopt veel om. Draag schoenen waar je de hele dag op kunt staan.</p>
+      </div>
+    </div>
+    <div class="tip-item">
+      <div class="tip-icon">📱</div>
+      <div class="tip-text">
+        <h4>Telefoon opladen</h4>
+        <p>Neem een powerbank mee. Je bent de hele dag op pad en wilt foto's en video's maken. De Cremà op 19 maart duurt tot laat in de nacht.</p>
+      </div>
+    </div>
+    <div class="tip-item">
+      <div class="tip-icon">🚇</div>
+      <div class="tip-text">
+        <h4>Openbaar vervoer</h4>
+        <p>Vanaf het vliegveld: metro lijn 3 of 5 naar het centrum (~25 min, €5,50). Veel straten zijn afgesloten voor verkeer. De metro en bus rijden met verlengde dienstregelingen.</p>
+      </div>
+    </div>
+    <div class="tip-item">
+      <div class="tip-icon">🌡️</div>
+      <div class="tip-text">
+        <h4>Weer in maart</h4>
+        <p>Verwacht 15-20°C overdag, 's avonds rond de 10°C. Neem een licht jasje mee voor de avonden. De zon is al flink — zonnebrand kan geen kwaad.</p>
+      </div>
+    </div>
+    <div class="tip-item">
+      <div class="tip-icon">📋</div>
+      <div class="tip-text">
+        <h4>Reserveren</h4>
+        <p>Restaurants zitten vol tijdens Fallas. Reserveer van tevoren, zeker voor de avonduren. Populaire plekken zijn vaak weken vooruit vol.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="fire-divider"></div>
+
+<!-- ==================== DAG 1: 17 MAART ==================== -->
+<div class="day-header" id="dag1">
+  <span class="day-number">01</span>
+  <p class="day-date">Dinsdag 17 maart 2026</p>
+  <h2 class="day-title">Aankomst & Ofrenda</h2>
+  <p class="day-subtitle">De stad bruist, de bloemen stromen — jij landt midden in de magie</p>
+</div>
+
+<div class="timeline">
+  <div class="tl-item">
+    <div class="tl-time">
+      <div class="time">12:45</div>
+      <div class="dur">aankomst</div>
+    </div>
+    <div class="tl-dot"></div>
+    <div class="tl-content">
+      <span class="tl-tag tag-travel">Reis</span>
+      <h3>Landing op Valencia Airport (VLC)</h3>
+      <p>Welkom in Valencia! Pak de metro (lijn 3 of 5) richting centrum. Uitstappen bij station Colón of Xàtiva — beide liggen midden in het Fallas-gebied. De rit duurt circa 25 minuten. Koop een enkeltje aan de automaat (€5,50).</p>
+    </div>
+  </div>
+
+  <div class="tl-item">
+    <div class="tl-time">
+      <div class="time">13:30</div>
+      <div class="dur">~30 min</div>
+    </div>
+    <div class="tl-dot"></div>
+    <div class="tl-content">
+      <span class="tl-tag tag-travel">Reis</span>
+      <h3>Inchecken & bagage droppen</h3>
+      <p>Ga naar je accommodatie, drop je spullen en maak je klaar voor een intense middag. Trek comfortabele schoenen aan en neem je oordoppen mee.</p>
+    </div>
+  </div>
+
+  <div class="tl-item">
+    <div class="tl-time">
+      <div class="time">14:00</div>
+      <div class="dur">~7 min</div>
+    </div>
+    <div class="tl-dot"></div>
+    <div class="tl-content">
+      <span class="tl-tag tag-event">Fallas Event</span>
+      <h3>🔊 Mascletà — Plaza del Ayuntamiento</h3>
+      <p>Je hebt krap de tijd, maar als je accommodatie dichtbij het centrum is kun je het nog nét halen. De mascletà begint stipt om 14:00 en duurt circa 5-7 minuten. Als je te laat bent: geen stress, morgen weer een kans. Je hoort het sowieso door de hele stad heen.</p>
+    </div>
+  </div>
+
+  <div class="tl-item">
+    <div class="tl-time">
+      <div class="time">14:30</div>
+      <div class="dur">~1,5 uur</div>
+    </div>
+    <div class="tl-dot"></div>
+    <div class="tl-content">
+      <span class="tl-tag tag-food">Eten</span>
+      <h3>Late lunch</h3>
+      <p>Perfect moment voor een stevige lunch. In Spanje eet je rond deze tijd. Probeer een menú del día — een driegangenmenu dat de meeste restaurants aanbieden voor €12-20. Zie de restauranttips verderop voor vegetarische opties.</p>
+    </div>
+  </div>
+
+  <div class="tl-item">
+    <div class="tl-time">
+      <div class="time">15:30</div>
+      <div class="dur">tot ~24:00</div>
+    </div>
+    <div class="tl-dot"></div>
+    <div class="tl-content">
+      <span class="tl-tag tag-event">Fallas Event</span>
+      <h3>💐 Ofrenda de Flores — Dag 1</h3>
+      <p>Het emotionele hoogtepunt van Fallas. Duizenden falleros en falleras in schitterende traditionele klederdracht lopen in processie naar de Plaza de la Virgen. Iedereen draagt boeketten die samen een enorme bloemmantel vormen voor de Maagd van de Ontheemden. De route loopt via Calle de la Paz en Calle San Vicente — fantastisch om langs te staan. Dit duurt de hele middag en avond.</p>
+    </div>
+  </div>
+
+  <div class="tl-item">
+    <div class="tl-time">
+      <div class="time">16:00</div>
+      <div class="dur">~2 uur</div>
+    </div>
+    <div class="tl-dot"></div>
+    <div class="tl-content">
+      <span class="tl-tag tag-sight">Bezienswaardigheden</span>
+      <h3>Fallas-monumenten verkennen</h3>
+      <p>Slenter door de straten en ontdek de fallas in de wijken. De monumenten zijn nu volledig opgebouwd en verlicht. Let op de satirische details — ze becommentariëren actuele gebeurtenissen. De meest spectaculaire staan in de Sección Especial rondom het centrum. Loop ook door Ruzafa voor sfeervolle kleinere fallas.</p>
+    </div>
+  </div>
+
+  <div class="tl-item">
+    <div class="tl-time">
+      <div class="time">20:30</div>
+      <div class="dur">avond</div>
+    </div>
+    <div class="tl-dot"></div>
+    <div class="tl-content">
+      <span class="tl-tag tag-food">Eten</span>
+      <h3>Diner</h3>
+      <p>Reserveer vooraf! De stad zit bomvol. In Spanje eet je 's avonds laat — 20:30-21:30 is normaal. Geniet van de feestelijke sfeer in de straten na het eten.</p>
+    </div>
+  </div>
+
+  <div class="tl-item">
+    <div class="tl-time">
+      <div class="time">22:00+</div>
+      <div class="dur">nacht</div>
+    </div>
+    <div class="tl-dot"></div>
+    <div class="tl-content">
+      <span class="tl-tag tag-event">Fallas Event</span>
+      <h3>Nachtelijke sfeer</h3>
+      <p>Fallas slaapt niet. De verlichte fallas zijn 's nachts extra indrukwekkend. Loop door de straten, geniet van straatmuziek, eet buñuelos (Valenciaanse donuts) bij een van de vele kraampjes, en laat de sfeer op je inwerken. De Ofrenda gaat door tot na middernacht.</p>
+    </div>
+  </div>
+</div>
+
+<div class="fire-divider"></div>
+
+<!-- ==================== DAG 2: 18 MAART ==================== -->
+<div class="day-header" id="dag2">
+  <span class="day-number">02</span>
+  <p class="day-date">Woensdag 18 maart 2026</p>
+  <h2 class="day-title">Ofrenda & Nit del Foc</h2>
+  <p class="day-subtitle">De langste dag — van ochtendexplosies tot middernachtvuurwerk</p>
+</div>
+
+<div class="timeline">
+  <div class="tl-item">
+    <div class="tl-time">
+      <div class="time">09:00</div>
+      <div class="dur">ochtend</div>
+    </div>
+    <div class="tl-dot"></div>
+    <div class="tl-content">
+      <span class="tl-tag tag-sight">Bezienswaardigheden</span>
+      <h3>Homenaje a Maestro Serrano</h3>
+      <p>Om 12:00 vindt een eerbetoon plaats aan Maestro Serrano (componist van het Valenciaans volkslied) bij zijn monument aan de Avinguda del Regne de València — vlak bij je wandelroute richting de Balears. Maar eerst: neem 's ochtends de tijd om fallas te bekijken die je gisteren hebt gemist. Dit is je laatste volle dag om de monumenten te bewonderen voordat ze vanavond… ja, verbrand worden.</p>
+    </div>
+  </div>
+
+  <div class="tl-item">
+    <div class="tl-time">
+      <div class="time">10:00</div>
+      <div class="dur">~2 uur</div>
+    </div>
+    <div class="tl-dot"></div>
+    <div class="tl-content">
+      <span class="tl-tag tag-sight">Bezienswaardigheden</span>
+      <h3>Mercado de Colón & Mercado Central</h3>
+      <p>Twee schitterende marktgebouwen en allebei de moeite waard. Het Mercado de Colón (art-nouveau, aan je wandelroute) heeft terrasjes en een horchatería — drink hier een horchata con fartons, het Valenciaanse volksdrankje. Het Mercado Central (gotische hal, bij het centrum) is één van de mooiste versmarkten van Europa, geopend tot 15:00.</p>
+    </div>
+  </div>
+
+  <div class="tl-item">
+    <div class="tl-time">
+      <div class="time">12:30</div>
+      <div class="dur">~1,5 uur</div>
+    </div>
+    <div class="tl-dot"></div>
+    <div class="tl-content">
+      <span class="tl-tag tag-food">Eten</span>
+      <h3>Lunch — vóór de mascletà</h3>
+      <p>Eet op tijd, want om 13:00 wil je richting de Plaza del Ayuntamiento voor een goede plek bij de mascletà. Pak een snelle lunch, of haal iets bij het Mercado Central.</p>
+    </div>
+  </div>
+
+  <div class="tl-item">
+    <div class="tl-time">
+      <div class="time">13:00</div>
+      <div class="dur">~1 uur wachten</div>
+    </div>
+    <div class="tl-dot"></div>
+    <div class="tl-content">
+      <span class="tl-tag tag-tip">Tip</span>
+      <h3>Plek zoeken voor de mascletà</h3>
+      <p>De Plaza del Ayuntamiento stroomt snel vol. Wees er minstens een uur van tevoren. De sfeer opbouwt is onderdeel van de ervaring — bandas spelen, de spanning stijgt, mensen tellen af. Sta niet te dicht bij het hek als je gevoelig bent voor geluid. Oordoppen in!</p>
+    </div>
+  </div>
+
+  <div class="tl-item">
+    <div class="tl-time">
+      <div class="time">14:00</div>
+      <div class="dur">~7 min</div>
+    </div>
+    <div class="tl-dot"></div>
+    <div class="tl-content">
+      <span class="tl-tag tag-event">Fallas Event</span>
+      <h3>🔊 Mascletà</h3>
+      <p>Vandaag is het een van de laatste mascletàs — de pirotécnicos halen alles uit de kast. Na het traditionele "Senyor pirotècnic, pot començar la mascletà!" barst het los. De grond trilt, je borstkas trilt mee, en het hele plein gaat uit z'n dak.</p>
+    </div>
+  </div>
+
+  <div class="tl-item">
+    <div class="tl-time">
+      <div class="time">15:30</div>
+      <div class="dur">tot ~24:00</div>
+    </div>
+    <div class="tl-dot"></div>
+    <div class="tl-content">
+      <span class="tl-tag tag-event">Fallas Event</span>
+      <h3>💐 Ofrenda de Flores — Dag 2</h3>
+      <p>De tweede dag van de bloemceremonie. Vandaag wordt het ontwerp op de mantel van de Maagd onthuld. Opnieuw schitterende processies door het centrum. De route via Calle de la Paz is prachtig om te fotograferen.</p>
+    </div>
+  </div>
+
+  <div class="tl-item">
+    <div class="tl-time">
+      <div class="time">20:00</div>
+      <div class="dur">~1,5 uur</div>
+    </div>
+    <div class="tl-dot"></div>
+    <div class="tl-content">
+      <span class="tl-tag tag-food">Eten</span>
+      <h3>Vroeg diner</h3>
+      <p>Eet vanavond iets eerder dan normaal, want je wilt om 23:00 richting de Puente de Monteolivete voor de Nit del Foc. Dit is een lange avond — eet stevig.</p>
+    </div>
+  </div>
+
+  <div class="tl-item">
+    <div class="tl-time">
+      <div class="time">23:00</div>
+      <div class="dur">plek zoeken</div>
+    </div>
+    <div class="tl-dot"></div>
+    <div class="tl-content">
+      <span class="tl-tag tag-tip">Tip</span>
+      <h3>Positie kiezen voor Nit del Foc</h3>
+      <p>Loop richting het oude rivierbed van de Turia, bij de Puente de Monteolivete (vlak bij de Stad van Kunsten en Wetenschappen). Het wordt er druk — wees op tijd. Dit is het grootste vuurwerkspektakel van het festival.</p>
+    </div>
+  </div>
+
+  <div class="tl-item">
+    <div class="tl-time">
+      <div class="time">23:59</div>
+      <div class="dur">~30 min</div>
+    </div>
+    <div class="tl-dot"></div>
+    <div class="tl-content">
+      <span class="tl-tag tag-event">Fallas Event</span>
+      <h3>🎆 Nit del Foc</h3>
+      <p>De nacht van het vuur. Het meest indrukwekkende vuurwerkspektakel dat je ooit zult meemaken. De lucht kleurt, de grond dreunt, en heel Valencia kijkt omhoog. Dit is het moment waarop je begrijpt waarom mensen hiervoor de wereld overvliegen. Oordoppen in — ook bij vuurwerk is het oorverdovend.</p>
+    </div>
+  </div>
+</div>
+
+<div class="highlight-box" style="max-width: 900px; margin: 0 auto 2rem; margin-left: auto; margin-right: auto;">
+  <h4>⚡ Let op: korte nacht!</h4>
+  <p>Na de Nit del Foc is het na middernacht. Morgen is La Cremà — de grote finale. Slaap als je kunt, maar bereid je voor op de meest intense dag van het festival.</p>
+</div>
+
+<div class="fire-divider"></div>
+
+<!-- ==================== DAG 3: 19 MAART ==================== -->
+<div class="day-header" id="dag3">
+  <span class="day-number">03</span>
+  <p class="day-date">Donderdag 19 maart 2026 — San José</p>
+  <h2 class="day-title">La Cremà</h2>
+  <p class="day-subtitle">De grote finale — alles gaat in vlammen op</p>
+</div>
+
+<div class="timeline">
+  <div class="tl-item">
+    <div class="tl-time">
+      <div class="time">10:00</div>
+      <div class="dur">ochtend</div>
+    </div>
+    <div class="tl-dot"></div>
+    <div class="tl-content">
+      <span class="tl-tag tag-sight">Bezienswaardigheden</span>
+      <h3>Laatste kans: monumenten bekijken</h3>
+      <p>Vandaag worden alle fallas verbrand. Loop 's ochtends nog een laatste ronde langs de monumenten die je het mooist vindt. Maak foto's — vanavond bestaan ze niet meer. Loop ook langs de kinderversies (fallas infantiles), die worden als eerste verbrand.</p>
+    </div>
+  </div>
+
+  <div class="tl-item">
+    <div class="tl-time">
+      <div class="time">12:00</div>
+      <div class="dur">~1,5 uur</div>
+    </div>
+    <div class="tl-dot"></div>
+    <div class="tl-content">
+      <span class="tl-tag tag-food">Eten</span>
+      <h3>Stevige lunch</h3>
+      <p>Eet goed, want het wordt een lange avond (en nacht). Vanavond zijn veel restaurants extra druk of zelfs gesloten — zorg dat je nu goed vult.</p>
+    </div>
+  </div>
+
+  <div class="tl-item">
+    <div class="tl-time">
+      <div class="time">14:00</div>
+      <div class="dur">~7 min</div>
+    </div>
+    <div class="tl-dot"></div>
+    <div class="tl-content">
+      <span class="tl-tag tag-event">Fallas Event</span>
+      <h3>🔊 Laatste Mascletà</h3>
+      <p>De allerlaatste mascletà van Fallas 2026. De pirotécnicos geven alles. Dit is traditioneel de meest indrukwekkende van het hele festival — een emotioneel moment voor de Valencianos.</p>
+    </div>
+  </div>
+
+  <div class="tl-item">
+    <div class="tl-time">
+      <div class="time">19:00</div>
+      <div class="dur">~1 uur</div>
+    </div>
+    <div class="tl-dot"></div>
+    <div class="tl-content">
+      <span class="tl-tag tag-event">Fallas Event</span>
+      <h3>🔥 Cabalgata del Fuego</h3>
+      <p>De vuurparade. Een optocht met vuur, muziek en dans die door de straten trekt van Calle de la Paz tot Porta de la Mar. De spanning bouwt op naar het grote moment van vanavond.</p>
+    </div>
+  </div>
+
+  <div class="tl-item">
+    <div class="tl-time">
+      <div class="time">20:00</div>
+    </div>
+    <div class="tl-dot"></div>
+    <div class="tl-content">
+      <span class="tl-tag tag-event">Fallas Event</span>
+      <h3>🔥 Cremà — Kinderfallas</h3>
+      <p>De eerste fallas gaan in vlammen op: de kinderfallas. Door de hele stad worden ze aangestoken. Loop door de wijken om het van dichtbij mee te maken — de hitte is voelbaar.</p>
+    </div>
+  </div>
+
+  <div class="tl-item">
+    <div class="tl-time">
+      <div class="time">20:30</div>
+    </div>
+    <div class="tl-dot"></div>
+    <div class="tl-content">
+      <span class="tl-tag tag-event">Fallas Event</span>
+      <h3>Cremà — Eerste prijs kinderfalla (Sección Especial)</h3>
+      <p>De winnende kinderfalla van de speciale sectie wordt verbrand. Een extra spectaculair moment.</p>
+    </div>
+  </div>
+
+  <div class="tl-item">
+    <div class="tl-time">
+      <div class="time">21:00</div>
+    </div>
+    <div class="tl-dot"></div>
+    <div class="tl-content">
+      <span class="tl-tag tag-event">Fallas Event</span>
+      <h3>Cremà — Gemeentelijke kinderfalla</h3>
+      <p>De gemeentelijke kinderfalla op de Plaza del Ayuntamiento wordt aangestoken.</p>
+    </div>
+  </div>
+
+  <div class="tl-item">
+    <div class="tl-time">
+      <div class="time">22:00</div>
+      <div class="dur">de stad staat in brand</div>
+    </div>
+    <div class="tl-dot"></div>
+    <div class="tl-content">
+      <span class="tl-tag tag-event">Fallas Event</span>
+      <h3>🔥🔥🔥 CREMÀ — Alle fallas van Valencia</h3>
+      <p>Dit is het. Door de hele stad worden honderden fallas aangestoken. De lucht kleurt oranje, de hitte is overweldigend, de emotie is voelbaar. Kies een falla in een wijk die je mooi vindt en beleef het van dichtbij. De brandweer spuit water op de gebouwen — je wordt nat. Dat hoort erbij.</p>
+    </div>
+  </div>
+
+  <div class="tl-item">
+    <div class="tl-time">
+      <div class="time">22:30</div>
+    </div>
+    <div class="tl-dot"></div>
+    <div class="tl-content">
+      <span class="tl-tag tag-event">Fallas Event</span>
+      <h3>Cremà — Eerste prijs grote falla (Sección Especial)</h3>
+      <p>De winnaar van de belangrijkste categorie gaat in vlammen op. Dit trekt altijd enorme menigtes.</p>
+    </div>
+  </div>
+
+  <div class="tl-item">
+    <div class="tl-time">
+      <div class="time">23:00</div>
+      <div class="dur">het grote finale</div>
+    </div>
+    <div class="tl-dot"></div>
+    <div class="tl-content">
+      <span class="tl-tag tag-event">Fallas Event</span>
+      <h3>🔥 Cremà — Falla Municipal (Plaza del Ayuntamiento)</h3>
+      <p>Het allerlaatste moment: de gemeentelijke falla op de Plaza del Ayuntamiento — dit jaar met een Charles Chaplin-thema — wordt aangestoken. Vuurwerk, water, vuur en tienduizenden mensen die samen het einde van Fallas 2026 vieren. Onvergetelijk.</p>
+    </div>
+  </div>
+</div>
+
+<div class="highlight-box" style="max-width: 900px; margin: 0 auto 2rem;">
+  <h4>⏰ Belangrijk: je vlucht morgen!</h4>
+  <p>Je vlucht vertrekt vrijdag om 06:15. Na de Cremà kun je nog even genieten van de sfeer in de stad, maar plan je terugkeer naar je accommodatie. Je moet rond 03:30-04:00 richting het vliegveld. De metro rijdt op Fallas-nachten vaak met verlengde dienstregeling — check dit bij aankomst. Overweeg anders een taxi te reserveren (reken op €20-25 naar het vliegveld).</p>
+</div>
+
+<div class="fire-divider"></div>
+
+<!-- ==================== DAG 4: 20 MAART ==================== -->
+<div class="day-header" id="dag4">
+  <span class="day-number">04</span>
+  <p class="day-date">Vrijdag 20 maart 2026</p>
+  <h2 class="day-title">Tot ziens, Valencia</h2>
+  <p class="day-subtitle">De as nog warm, de herinneringen voor altijd</p>
+</div>
+
+<div class="timeline">
+  <div class="tl-item">
+    <div class="tl-time">
+      <div class="time">03:30</div>
+      <div class="dur">vroeg</div>
+    </div>
+    <div class="tl-dot"></div>
+    <div class="tl-content">
+      <span class="tl-tag tag-travel">Reis</span>
+      <h3>Vertrek naar vliegveld</h3>
+      <p>Pak je spullen (hopelijk heb je die gisteravond al klaargezet) en ga richting het vliegveld. Metro of taxi — de eerste metro's rijden meestal rond 05:00, dus een taxi is waarschijnlijk de veiligste optie. Als je toch nog buiten bent na de Cremà: de stad is nog wakker, je kunt buiten je accommodatie wachten.</p>
+    </div>
+  </div>
+
+  <div class="tl-item">
+    <div class="tl-time">
+      <div class="time">04:15</div>
+      <div class="dur">check-in</div>
+    </div>
+    <div class="tl-dot"></div>
+    <div class="tl-content">
+      <span class="tl-tag tag-travel">Reis</span>
+      <h3>Aankomst luchthaven</h3>
+      <p>Twee uur voor vertrek is voldoende. Check in, ga door security, en geniet nog even van een laatste Spaanse koffie. De luchthaven is compact en overzichtelijk.</p>
+    </div>
+  </div>
+
+  <div class="tl-item">
+    <div class="tl-time">
+      <div class="time">06:15</div>
+    </div>
+    <div class="tl-dot"></div>
+    <div class="tl-content">
+      <span class="tl-tag tag-travel">Reis</span>
+      <h3>✈️ Vertrek</h3>
+      <p>Adiós Valencia. Je oren suizen nog, je ruikt naar buskruit, en je hebt het mooiste festival van Europa meegemaakt. Tot de volgende keer.</p>
+    </div>
+  </div>
+</div>
+
+<div class="fire-divider"></div>
+
+<!-- ==================== ETEN & DRINKEN ==================== -->
+<section id="eten" class="section-wide">
+  <p class="section-label">Restaurants & Bars</p>
+  <h2 class="section-title">Eten & drinken</h2>
+  <p class="section-intro">
+    Vegetarische opties, lokale bars en plekken langs je wandelroute van het Ayuntamiento naar de Avinguda de les Balears. Valencia heeft een fantastische food scene — hier de highlights.
+  </p>
+
+  <h3 style="font-family: 'Playfair Display', serif; font-size: 1.3rem; margin-bottom: 1rem; color: var(--accent-teal);">🌱 Vegetarisch & Vegan</h3>
+  <div class="cards-grid" style="margin-bottom: 3rem;">
+    <div class="resto-card">
+      <div class="rating">★ 4.6</div>
+      <h3>Restaurant Copenhagen</h3>
+      <div class="cuisine">Vegetarisch • Ruzafa</div>
+      <p>Creatief vegetarisch restaurant met degustatiemenu. De boletus croquettes en aubergine rolletjes zijn fantastisch. Gezellige sfeer, aardige bediening. Gesloten op maandag.</p>
+      <div class="card-meta"><strong>Prijs:</strong> €€ · <strong>Adres:</strong> Carrer del Literat Azorín, 8</div>
+    </div>
+    <div class="resto-card">
+      <div class="rating">★ 4.8</div>
+      <h3>Khambú Ruzafa</h3>
+      <div class="cuisine">Vegan • Ruzafa</div>
+      <p>Betaalbare vegan spot met uitstekende burgers, taco's en paddenstoelcroquetas. Lunchmenu met hoofdgerecht, friet en drankje voor €10-15. Klein en gezellig. Gesloten op maandag.</p>
+      <div class="card-meta"><strong>Prijs:</strong> € · <strong>Adres:</strong> Carrer dels Tomasos, 4</div>
+    </div>
+    <div class="resto-card">
+      <div class="rating">★ 4.7</div>
+      <h3>La Casa Viva Ruzafa</h3>
+      <div class="cuisine">Vegetarisch & Vegan • Ruzafa</div>
+      <p>Uitgebreid menu met lasagne, falafel, pizza's en creatieve salades. Goede prijs-kwaliteit. De pompoen-lasagne is een smaakbom. Gesloten op dinsdag.</p>
+      <div class="card-meta"><strong>Prijs:</strong> €€ · <strong>Adres:</strong> C/ de Cadis, 76</div>
+    </div>
+  </div>
+
+  <h3 style="font-family: 'Playfair Display', serif; font-size: 1.3rem; margin-bottom: 1rem; color: var(--fire-yellow);">🍽️ Op de route</h3>
+  <div class="cards-grid" style="margin-bottom: 3rem;">
+    <div class="resto-card">
+      <div class="rating">★ 4.6</div>
+      <h3>Sabora Gourmet</h3>
+      <div class="cuisine">Creatief • Carrer de Sorní</div>
+      <p>Verborgen parel recht op je route. Creatieve gerechten op Michelin-niveau voor bistroprijzen. Menú del día voor €18,90 met drie gangen. De preisoep is legendarisch. Gesloten op zondag.</p>
+      <div class="card-meta"><strong>Prijs:</strong> €€ · <strong>Adres:</strong> C/ de Sorní, 15</div>
+    </div>
+    <div class="resto-card">
+      <div class="rating">★ 4.4</div>
+      <h3>Mercado de Colón</h3>
+      <div class="cuisine">Markthal • Langs de route</div>
+      <p>Geen restaurant maar een hele markthal vol opties. Horchatería Daniel is een must voor horchata con fartons. Verder diverse tapas, wijn en delicatessen. Elke dag open tot 21:00.</p>
+      <div class="card-meta"><strong>Prijs:</strong> € – €€ · <strong>Adres:</strong> Carrer de Jorge Juan, 19</div>
+    </div>
+    <div class="resto-card">
+      <div class="rating">★ 4.4</div>
+      <h3>Restaurante ALMA</h3>
+      <div class="cuisine">Mediterraan • Av. de França</div>
+      <p>Aan het einde van je wandelroute. Uitstekende paella en arroz negro. Goede prijs-kwaliteit (paella voor twee + drankjes + dessert ≈ €25 p.p.). Alleen lunch.</p>
+      <div class="card-meta"><strong>Prijs:</strong> €€ · <strong>Adres:</strong> Av. de França, 58</div>
+    </div>
+  </div>
+
+  <h3 style="font-family: 'Playfair Display', serif; font-size: 1.3rem; margin-bottom: 1rem; color: var(--fire-orange);">🍺 Bars & Terrasjes</h3>
+  <div class="cards-grid">
+    <div class="resto-card">
+      <div class="rating">★ 4.0</div>
+      <h3>Bar Nodo</h3>
+      <div class="cuisine">Tapas • Carrer de Sorní</div>
+      <p>Authentiek lokaal barretje aan je route. Goede tapas, prima sangria, nauwelijks toeristen. Perfecte tussenstop na de mascletà. Let op: gesloten in het weekend.</p>
+      <div class="card-meta"><strong>Adres:</strong> C/ de Sorní, 30</div>
+    </div>
+    <div class="resto-card">
+      <div class="rating">★ 4.1</div>
+      <h3>Cervecería Aquarium</h3>
+      <div class="cuisine">Klassiek café • Gran Via</div>
+      <p>Valenciaans instituut met retro-interieur. Bijzonder: eigendom van het personeel (coöperatie). Goede tapas en cocktails. Elke dag open van 07:00 tot middernacht.</p>
+      <div class="card-meta"><strong>Adres:</strong> Gran Via del Marqués del Túria, 57</div>
+    </div>
+    <div class="resto-card">
+      <div class="rating">★ 4.9</div>
+      <h3>The Jungle</h3>
+      <div class="cuisine">Cocktailbar • Comte d'Altea</div>
+      <p>Kleine cocktailbar met de hoogste score van de wijk. Creatieve, fruitige cocktails in een sfeervolle setting. Kom vroeg want het is klein. Open wo-za vanaf 17:30/18:00.</p>
+      <div class="card-meta"><strong>Adres:</strong> Carrer del Comte d'Altea, 12</div>
+    </div>
+    <div class="resto-card">
+      <div class="rating">★ 4.5</div>
+      <h3>Bar Veni</h3>
+      <div class="cuisine">Bierbar • Gran Via</div>
+      <p>Groot bierprogramma, goede croquettes, relaxte sfeer. Leuk als je voetbal wilt kijken. Happy hour 17:00-20:00.</p>
+      <div class="card-meta"><strong>Adres:</strong> Gran Via del Marqués del Túria, 65</div>
+    </div>
+  </div>
+
+  <div class="highlight-box" style="margin-top: 2rem;">
+    <h4>🧆 Niet vergeten te proeven!</h4>
+    <p><strong>Horchata con fartons</strong> — zoet amandeldrankje met luchtige broodjes, dé Valenciaanse klassieker. <strong>Buñuelos de calabaza</strong> — pompoendonuts die op elk straathoekje te koop zijn tijdens Fallas. <strong>Agua de Valencia</strong> — cocktail van cava, sinaasappelsap en wodka. En natuurlijk: <strong>paella</strong> (in Valencia altijd als lunch, nooit als diner!).</p>
+  </div>
+</section>
+
+<div class="fire-divider"></div>
+
+<!-- ==================== DE ROUTE ==================== -->
+<section id="route">
+  <p class="section-label">Wandelroute</p>
+  <h2 class="section-title">Van het Ayuntamiento naar de Balears</h2>
+  <p class="section-intro">
+    Jouw geplande wandelroute van ~3 km (40 minuten) loopt door het hart van Valencia. Hier zijn de highlights onderweg.
+  </p>
+
+  <div class="route-box">
+    <h3>Highlights op de route</h3>
+    <p style="color: var(--text-muted); font-size: 0.92rem; margin-bottom: 1.5rem;">
+      Van west naar oost — je loopt door drie verschillende wijken, elk met een eigen karakter.
+    </p>
+    <div class="route-stops">
+      <div class="route-stop"><span class="stop-num">1</span> Plaza del Ayuntamiento</div>
+      <div class="route-stop"><span class="stop-num">2</span> Colón (winkelstraat)</div>
+      <div class="route-stop"><span class="stop-num">3</span> Carrer de Sorní</div>
+      <div class="route-stop"><span class="stop-num">4</span> Mercado de Colón</div>
+      <div class="route-stop"><span class="stop-num">5</span> Gran Via del Marqués del Túria</div>
+      <div class="route-stop"><span class="stop-num">6</span> Palau de la Música</div>
+      <div class="route-stop"><span class="stop-num">7</span> Turia Park</div>
+      <div class="route-stop"><span class="stop-num">8</span> Camins al Grau</div>
+      <div class="route-stop"><span class="stop-num">9</span> Av. de França</div>
+      <div class="route-stop"><span class="stop-num">10</span> Avinguda de les Balears</div>
+    </div>
+  </div>
+
+  <div class="cards-grid" style="margin-top: 2rem;">
+    <div class="info-card">
+      <div class="card-icon">🏛️</div>
+      <h3>Plaza del Ayuntamiento</h3>
+      <p>Het kloppend hart van Fallas. Hier staat de gemeentelijke falla (dit jaar: Charles Chaplin), hier is de dagelijkse mascletà, en hier eindigt alles op 19 maart met de laatste Cremà. Het imposante stadhuis en het Correos-gebouw omlijsten het plein.</p>
+    </div>
+    <div class="info-card">
+      <div class="card-icon">🏗️</div>
+      <h3>Mercado de Colón</h3>
+      <p>Prachtig modernistisch (art-nouveau) marktgebouw uit 1916. Binnen vind je terrasjes, delicatessenzaken en de beroemde Horchatería Daniel. De architectuur doet denken aan Gaudí — sierlijke bogen en kleurrijke tegels.</p>
+    </div>
+    <div class="info-card">
+      <div class="card-icon">🎵</div>
+      <h3>Palau de la Música</h3>
+      <p>Het concertgebouw van Valencia, gelegen aan het drooggevallen Turia-rivierbed dat nu een 9 km lang park is. Het gebouw is imposant, het park is fantastisch om doorheen te wandelen — vol hardlopers, gezinnen en speeltuinen.</p>
+    </div>
+    <div class="info-card">
+      <div class="card-icon">🌊</div>
+      <h3>Camins al Grau & Les Balears</h3>
+      <p>De wijk richting de haven en het strand. Minder toeristisch, meer lokaal. De Avinguda de les Balears is een brede boulevard met lokale winkeltjes en restaurants. Verderop kun je door naar de Ciudad de las Artes y las Ciencias of het strand van la Malvarrosa.</p>
+    </div>
+  </div>
+</section>
+
+<div class="fire-divider"></div>
+
+<!-- ==================== EXTRA TIPS ==================== -->
+<section>
+  <p class="section-label">Bonus</p>
+  <h2 class="section-title">Overige bezienswaardigheden</h2>
+  <p class="section-intro">
+    Als je nog tijd over hebt (of eerder wakker wordt dan verwacht), zijn dit plekken die de moeite waard zijn — ook tijdens Fallas.
+  </p>
+
+  <div class="cards-grid">
+    <div class="info-card">
+      <div class="card-icon">⛪</div>
+      <h3>Catedral & Miguelete</h3>
+      <p>De kathedraal van Valencia met de beroemde Miguelete-toren (207 treden, €2). Bovenop heb je panoramisch uitzicht over de stad — spectaculair tijdens Fallas als je de fallas van bovenaf kunt zien.</p>
+      <div class="card-meta"><strong>Bereikbaar:</strong> 10 min lopen vanaf het Ayuntamiento</div>
+    </div>
+    <div class="info-card">
+      <div class="card-icon">🔬</div>
+      <h3>Ciudad de las Artes y las Ciencias</h3>
+      <p>Het futuristische complex van architect Santiago Calatrava. Indrukwekkende architectuur, zelfs als je niet naar binnen gaat. Het Oceanogràfic (grootste aquarium van Europa) is een aanrader als je een paar uur hebt.</p>
+      <div class="card-meta"><strong>Bereikbaar:</strong> 25 min lopen vanaf het einde van je route</div>
+    </div>
+    <div class="info-card">
+      <div class="card-icon">🎨</div>
+      <h3>Barrio del Carmen</h3>
+      <p>De oudste wijk van Valencia. Smalle straatjes vol street art, vintage winkeltjes en authentieke bars. Hier vind je ook de Torres de Serranos — de middeleeuwse stadspoort waar Fallas officieel wordt geopend.</p>
+      <div class="card-meta"><strong>Bereikbaar:</strong> 15 min lopen vanaf het Ayuntamiento</div>
+    </div>
+    <div class="info-card">
+      <div class="card-icon">🏖️</div>
+      <h3>Playa de la Malvarrosa</h3>
+      <p>Het stadsstrand van Valencia. In maart is het te koud om te zwemmen, maar een wandeling over de boulevard is heerlijk. Leuke strandtentjes voor een drankje in de zon.</p>
+      <div class="card-meta"><strong>Bereikbaar:</strong> 15 min lopen voorbij het einde van je route</div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== FOOTER ==================== -->
+<footer>
+  <p class="farewell">¡Bona nit i bona sort!</p>
+  <p style="margin-top: 0.5rem;">Reisgids samengesteld op basis van het officiële Fallas 2026-programma.</p>
+  <p style="margin-top: 0.3rem; opacity: 0.5;">Reserveer restaurants op tijd • Neem oordoppen mee • Geniet</p>
+</footer>
+
+<!-- ==================== ACTIVE NAV HIGHLIGHTING ==================== -->
+<script>
+  const sections = document.querySelectorAll('[id]');
+  const navLinks = document.querySelectorAll('.nav-link');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        navLinks.forEach(link => {
+          link.classList.remove('active');
+          if (link.getAttribute('href') === '#' + entry.target.id) {
+            link.classList.add('active');
+          }
+        });
+      }
+    });
+  }, { rootMargin: '-20% 0px -70% 0px' });
+
+  sections.forEach(section => observer.observe(section));
+</script>
+
+</body>
+</html>
